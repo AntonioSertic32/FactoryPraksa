@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #383837;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 25px;
+}
+
+p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+button {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+
+  text-align: center;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  background: #575756;
+  box-shadow: 0px 5px 10px rgba(56, 59, 55, 0.2);
+  border-radius: 30px;
+
+  padding: 18px 36px;
+  outline: 0;
+  border: 0;
+
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 1400px;
+  margin: 0 auto;
+  row-gap: 40px;
+  column-gap: 40px;
+  padding: 40px 0;
+}
+
+.container .box {
+  background: #ffffff;
+  border: 2px solid #e5e5e5;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container .box > img {
+  height: 250px;
+  width: 100%;
+
+  object-fit: cover;
+  margin-bottom: 11px;
+}
+
+.container .box h4 {
+  margin-bottom: 10px;
+}
+
+.container .box p {
+  margin-bottom: 20px;
+}
+
+.container .box > button {
+  margin: 0 auto;
+}
+
+.container .box:hover,
+.container .box:focus {
+  cursor: pointer;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.46s ease-in-out;
+}
