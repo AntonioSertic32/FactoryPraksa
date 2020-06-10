@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6d5d4b;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: #d3cbcf;
+}
+
+ul,
+li {
+  list-style-type: none;
+}
+
+/* --------------------------------------------------- Pozadina i naslov */
+
+.pozadina {
+  height: 100vh;
+  background-image: url(./img/1.jpg);
+  background-size: cover;
+}
+
+.zatamnjenje {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.25);
+  display: table;
+  width: 100%;
+}
+
+.headings {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+}
+.naslov {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 100px;
+  line-height: 133px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+.podnaslov {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 34px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* --------------------------------------------------- Gumb za otvaranje */
+
+/*kreira ikonu hamburgera*/
+.hamburger_button {
+  position: fixed;
+  top: 20px;
+  right: 60px;
+  z-index: 3;
+  text-align: center;
+  cursor: pointer;
+}
+.hamburger_icon {
+  position: relative;
+  margin-top: 35px;
+  transition: all 0.2s;
+  border-radius: 25px;
+}
+.hamburger_icon::before {
+  top: -8px;
+}
+.hamburger_icon::after {
+  top: -16px;
+}
+.hamburger_icon,
+.hamburger_icon::before,
+.hamburger_icon::after {
+  width: 30px;
+  height: 3px;
+  border-radius: 25px;
+  background-color: #fff;
+  display: inline-block;
+}
+.hamburger_icon::before,
+.hamburger_icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.4s;
+}
+
+/*skiva checkbox*/
+.checkbox_input {
+  display: none;
+}
+
+/*mice pozadinu da bude prozirno*/
+.checkbox_input:checked + .hamburger_button .hamburger_icon {
+  background-color: transparent;
+}
+
+/*rotira ikonu da bude X*/
+.checkbox_input:checked + .hamburger_button .hamburger_icon::before {
+  transform: rotate(135deg);
+  top: -10px;
+}
+.checkbox_input:checked + .hamburger_button .hamburger_icon::after {
+  transform: rotate(-135deg);
+  top: -10px;
+}
+
+/*prikazuje navigaciju koja se nalazila izvan ekrana sa desne strane */
+.checkbox_input:checked ~ .nav_background {
+  transform: translateX(-250px);
+}
+.checkbox_input:checked ~ .nav {
+  opacity: 1;
+  transform: translateX(-250px);
+}
+
+/* --------------------------------------------------- Navigacija */
+
+.nav_background {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  background-color: rgba(56, 59, 55, 0.95);
+  z-index: 1;
+  transition: all 0.5s ease-in;
+}
+.nav {
+  height: 100vh;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -250px;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.5s ease-in;
+}
+
+.nav_ul {
+  position: absolute;
+  top: 15%;
+  width: 100%;
+}
+
+.nav_li {
+  margin: 0 10px;
+  border-bottom: 1px solid #1e201d;
+  font-weight: bold;
+}
+
+.nav_a {
+  display: block;
+  font-size: 16px;
+  padding: 10px 20px;
+  color: #d3cbcf;
+  transition: all 0.2s ease-in-out;
+}
+
+/*rotira trokute na prelaz misem*/
+.triangle_icon {
+  transition: all 0.7s ease;
+  float: right;
+  margin-right: 15px;
+}
+.nav_li:hover > .nav_a > .triangle_icon {
+  transform: rotate(180deg);
+}
+
+.nav_li:hover > .nav_a {
+  cursor: pointer;
+  border-left: 2px solid #85b2ff;
+  background-color: #1e201d;
+}
+
+.sub_li {
+  margin: 0;
+  padding: 10px 20px;
+  border-bottom: 1px solid #1e201d;
+  font-size: 16px;
+  font-weight: normal;
+}
+/*uklanja crtu nakon zadnjeg itema jer bi inace bile duple*/
+.sub_li:last-child {
+  border-bottom: none;
+}
+.sub_li:hover {
+  cursor: pointer;
+  border-left: none;
+  background-color: #1e201d;
+}
+
+/*na prelaz misem se otvaruju podmeniji*/
+.aboutus,
+.planetearth {
+  background-color: rgba(30, 32, 29, 0.4);
+  margin: 0 auto;
+  width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+}
+.sub_one:hover > .aboutus,
+.sub_two:hover > .planetearth {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+}
