@@ -1,0 +1,8 @@
+// Some re-usable functions
+@function sum($numbers...)
+    $sum: 0
+
+    @each $number in $numbers
+        $sum: $sum + $number
+
+    @return $sum

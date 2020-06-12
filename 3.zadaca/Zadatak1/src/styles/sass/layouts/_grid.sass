@@ -1,0 +1,42 @@
+@use '../extras/mixins' as mixin
+@use '../extras/functions' as func
+
+.container
+    display: grid
+    grid-template-columns: 1fr 1fr 1fr
+
+    row-gap: func.sum(10px, 10px, 10px, 10px)
+    column-gap: func.sum(20px, 20px)
+
+    margin: 0 auto
+    max-width: 1920px - 260px * 2
+
+    padding: 40px 0
+
+    .box
+        background: $secondary-color
+        border: 2px solid $border-color
+
+        padding: 20px
+
+        display: flex
+        flex-direction: column
+
+        h4
+            margin-bottom: 10px
+
+        p
+            flex-grow: 1
+            margin-bottom: 20px
+
+        > button
+            margin: 0 auto
+
+        > img
+            margin-bottom: 11px
+            +mixin.box-image()
+
+        &:hover, &:focus
+            cursor: pointer
+            transition: all 0.6s ease-in-out
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2)
