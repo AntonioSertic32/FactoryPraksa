@@ -1,0 +1,62 @@
+
+/* ikona hamburgera */
+.hamburger_button
+    position: fixed
+    top: 20px
+    right: 60px
+    z-index: 3
+    text-align: center
+    cursor: pointer
+
+.hamburger_icon
+    position: relative
+    margin-top: 35px
+    transition: all 0.2s
+    border-radius: 25px
+
+.hamburger_icon::before
+    top: -8px
+
+.hamburger_icon::after
+    top: -16px
+
+.hamburger_icon,
+.hamburger_icon::before,
+.hamburger_icon::after
+    width: 30px
+    height: 3px
+    border-radius: 25px
+    background-color: $white-color
+    display: inline-block
+
+.hamburger_icon::before,
+.hamburger_icon::after
+    content: ""
+    position: absolute
+    left: 0
+    transition: all 0.4s
+
+/*skiva checkbox*/
+.checkbox_input
+    display: none
+
+/*mice pozadinu da bude prozirno*/
+.checkbox_input:checked + .hamburger_button .hamburger_icon
+    background-color: transparent
+
+/*rotira ikonu da bude X*/
+.checkbox_input:checked + .hamburger_button .hamburger_icon::before
+    transform: rotate(135deg)
+    top: -10px
+
+.checkbox_input:checked + .hamburger_button .hamburger_icon::after
+    transform: rotate(-135deg)
+    top: -10px
+
+/*prikazuje navigaciju koja se nalazila izvan ekrana sa desne strane */
+.checkbox_input:checked ~ .nav_background
+    transform: translateX(-250px)
+
+.checkbox_input:checked ~ .nav
+    opacity: 1
+    transform: translateX(-250px)

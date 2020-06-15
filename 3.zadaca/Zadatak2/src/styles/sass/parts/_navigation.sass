@@ -1,0 +1,81 @@
+.nav_background
+    height: 100vh
+    width: 250px
+    position: fixed
+    top: 0
+    right: -250px
+    background-color: $navigation-background-color
+    z-index: 1
+    transition: all 0.5s ease-in
+
+.nav
+    height: 100vh
+    width: 250px
+    position: fixed
+    top: 0
+    right: -250px
+    opacity: 0
+    z-index: 2
+    transition: all 0.5s ease-in
+
+    .nav_ul
+        position: absolute
+        top: 15%
+        width: 100%
+
+        .nav_li
+            margin: 0 10px
+            border-bottom: $nav_li-border-bottom
+            font-weight: bold
+
+            &:hover > .nav_a > .triangle_icon
+                transform: rotate(180deg)
+
+            &:hover > .nav_a
+                cursor: pointer
+                border-left: $nav_li-border-left
+                background-color: $nav_li-sub_li-background-color
+
+
+            .nav_a
+                display: block
+                font-size: 16px
+                padding: 10px 20px
+                color: $link-color
+                transition: all 0.2s ease-in-out
+
+                .triangle_icon
+                    transition: all 0.7s ease
+                    float: right
+                    margin-right: 15px
+        .aboutus,
+        .planetearth
+            background-color: $sub_menu-background-color
+            margin: 0 auto
+            width: 100%
+            visibility: hidden
+            opacity: 0
+            height: 0
+            
+            .sub_li
+                margin: 0
+                padding: 10px 20px
+                border-bottom: 1px solid $nav_li-sub_li-background-color
+                font-size: 16px
+                font-weight: normal
+
+                
+                &:hover
+                    cursor: pointer
+                    border-left: none
+                    background-color: $nav_li-sub_li-background-color
+
+            
+            .sub_li:last-child
+                border-bottom: none
+
+        .sub_one:hover > .aboutus,
+        .sub_two:hover > .planetearth
+            height: auto
+            visibility: visible
+            opacity: 1
