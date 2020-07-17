@@ -1,0 +1,206 @@
+@import url(//db.onlinewebfonts.com/c/ea250342ec4016561ba9e791c2f39c11?family=Posterama);
+@import url(//db.onlinewebfonts.com/c/bedb96f9dd7dc1113f0ddb36925913ab?family=PosteramaBold);
+@import url(//db.onlinewebfonts.com/c/92cfbcf0aab51ba298c0c3d1452d8c7f?family=PosteramaText);
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  background-color: #dae3f2;
+}
+
+.naslov {
+  font-family: posterama, sans-serif;
+}
+
+nav {
+  background-color: white;
+  width: 100%;
+  height: 5rem;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-shadow: 0 10px 40px rgba(26, 26, 26, 0.4);
+          box-shadow: 0 10px 40px rgba(26, 26, 26, 0.4);
+}
+
+nav .logo {
+  width: 22px;
+  height: 22px;
+  margin: 30px 10px 29px 30px;
+}
+
+nav h1 {
+  font-size: 16px;
+  margin-top: 1.9rem;
+  color: black;
+}
+
+nav h1 a:visited {
+  color: black;
+}
+
+nav button {
+  background-color: #E31C79;
+  height: 60px;
+  font-size: 16px;
+  border: none;
+  width: 160px;
+  color: white;
+  position: absolute;
+  margin-top: 10px;
+  right: 10px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+nav button img {
+  width: 14px;
+  margin-left: 14px;
+}
+
+.main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 54rem;
+}
+
+.main-container h2 {
+  display: inline-block;
+  font-size: 25px;
+  font-family: posteramaBold, sans-serif;
+  margin-top: 3.9rem;
+  color: black;
+}
+
+.main-container .nav-container {
+  width: 39rem;
+  height: 7rem;
+  border-radius: 100px;
+  z-index: -1;
+  background-color: #BBC7D6;
+  position: absolute;
+  top: 25rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .nav-container .hero-button {
+  background-color: #003DA7;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 6px;
+  z-index: 1;
+}
+
+.main-container .nav-container .prev {
+  float: left;
+}
+
+.main-container .nav-container .next {
+  float: right;
+}
+
+.main-container .hero-container {
+  background-color: white;
+  margin-top: 3.9rem;
+  width: 25rem;
+  height: 27rem;
+  -webkit-box-shadow: 0px 10px 40px rgba(26, 26, 26, 0.4);
+          box-shadow: 0px 10px 40px rgba(26, 26, 26, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main-container .hero-container img {
+  width: 350px;
+  height: 320px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-top: 30px;
+}
+
+.main-container .hero-container p {
+  font-size: 20px;
+  margin-top: 30px;
+  color: black;
+}
+
+.main-container .hidden-card {
+  height: 5px;
+  background-color: white;
+  -webkit-box-shadow: 0px 10px 40px rgba(26, 26, 26, 0.4);
+          box-shadow: 0px 10px 40px rgba(26, 26, 26, 0.4);
+  z-index: -2;
+}
+
+.main-container .card1 {
+  width: 390px;
+}
+
+.main-container .card2 {
+  width: 370px;
+}
+
+.main-container .random {
+  color: #003DA7;
+  font-size: 16px;
+  font-family: PosteramaText, sans-serif;
+  margin-top: 3.8rem;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #BBC7D6;
+          text-decoration-color: #BBC7D6;
+}
+
+.main-container .thumbnail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 60px;
+  margin-top: 3.8rem;
+}
+
+.main-container .thumbnail img {
+  width: 60px;
+  margin: 0 5px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+/*# sourceMappingURL=style.css.map */

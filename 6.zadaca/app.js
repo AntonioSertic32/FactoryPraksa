@@ -1,36 +1,31 @@
 // Deklariranje klase Hero
 class Hero {
+  intelligence = 0;
+  strength = 0;
+  speed = 0;
+  durability = 0;
+  power = 0;
+  combat = 0;
+
   constructor(name, intelligence, strength, speed, durability, power, combat) {
     this.name = name;
     if (intelligence != "null") {
       this.intelligence = intelligence;
-    } else {
-      this.intelligence = 0;
     }
     if (strength != "null") {
       this.strength = strength;
-    } else {
-      this.strength = 0;
     }
     if (speed != "null") {
       this.speed = speed;
-    } else {
-      this.speed = 0;
     }
     if (durability != "null") {
       this.durability = durability;
-    } else {
-      this.durability = 0;
     }
     if (power != "null") {
       this.power = power;
-    } else {
-      this.power = 0;
     }
     if (combat != "null") {
       this.combat = combat;
-    } else {
-      this.combat = 0;
     }
   }
 }
@@ -45,28 +40,23 @@ class Game {
   keys = ["intelligence", "strength", "speed", "durability", "power", "combat"];
 
   // Funkcija koja dohvaca heroje sa api-ja
-  CheckIn() {
-    for (var i = 0; i < 8; i++) {
-      var id = Math.floor(Math.random() * 732);
-      fetch(
-        "https://superheroapi.com/api/1495869663918880/" + id + "/powerstats"
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          this.heroes.push(
-            new Hero(
-              data.name,
-              data.intelligence,
-              data.strength,
-              data.speed,
-              data.durability,
-              data.power,
-              data.combat
-            )
-          );
-        })
-        .catch((error) => console.log("ERROR"));
-    }
+  CheckIn(id) {
+    fetch("https://superheroapi.com/api/1495869663918880/" + id + "/powerstats")
+      .then((res) => res.json())
+      .then((data) => {
+        this.heroes.push(
+          new Hero(
+            data.name,
+            data.intelligence,
+            data.strength,
+            data.speed,
+            data.durability,
+            data.power,
+            data.combat
+          )
+        );
+      })
+      .catch((error) => console.log("ERROR"));
   }
 
   // Funkcija koja izvrsava borbe heroja
@@ -163,7 +153,11 @@ class Game {
 
 // Kreiranje objekta Game i pozivanja njegovih metoda
 var game = new Game();
-game.CheckIn();
+
+for (var i = 0; i < 8; i++) {
+  var id = Math.floor(Math.random() * 732);
+  game.CheckIn(id);
+}
 
 setTimeout(() => {
   console.log(game.heroes);
