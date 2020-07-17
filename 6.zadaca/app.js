@@ -30,14 +30,36 @@ class Hero {
   }
 }
 
+class HeroDemo {
+  name = "";
+  image = "";
+
+  constructor(name, url) {
+    this.name = name;
+    if (url != "null") {
+      this.image = url;
+    }
+  }
+}
+
 // Deklariranje klase Game
 class Game {
   heroes = [];
+  heroes_demo = [];
 
   polufinale = [];
   finale = [];
 
   keys = ["intelligence", "strength", "speed", "durability", "power", "combat"];
+
+  CheckInDemo(id) {
+    fetch("https://superheroapi.com/api/1495869663918880/" + id + "/image")
+      .then((res) => res.json())
+      .then((data) => {
+        this.heroes_demo.push(new HeroDemo(data.name, data.url));
+      })
+      .catch((error) => console.log("ERROR"));
+  }
 
   // Funkcija koja dohvaca heroje sa api-ja
   CheckIn(id) {
@@ -154,6 +176,23 @@ class Game {
 // Kreiranje objekta Game i pozivanja njegovih metoda
 var game = new Game();
 
+for (var i = 0; i < 10; i++) {
+  var id = Math.floor(Math.random() * 732);
+  game.CheckInDemo(id);
+}
+
+setTimeout(() => {
+  console.log(game.heroes_demo);
+  var brojac = 0;
+  $("#thumbnail > a > .hero_icon").each(function () {
+    $(this).attr("src", game.heroes_demo[brojac].image);
+    brojac++;
+  });
+  $("#slider_icon").attr("src", game.heroes_demo[0].image);
+  $("#slider_hero_name").html(game.heroes_demo[0].name);
+}, 2000);
+
+/*
 for (var i = 0; i < 8; i++) {
   var id = Math.floor(Math.random() * 732);
   game.CheckIn(id);
@@ -168,3 +207,4 @@ setTimeout(() => {
   console.log("");
   game.Finale();
 }, 2000);
+*/

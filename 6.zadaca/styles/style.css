@@ -120,6 +120,14 @@ nav button img {
   float: right;
 }
 
+.main-container .nav-container img {
+  width: 20px;
+  height: 20px;
+  margin-left: 40px;
+  margin-top: 40px;
+  color: white;
+}
+
 .main-container .hero-container {
   background-color: white;
   margin-top: 3.9rem;
@@ -199,7 +207,8 @@ nav button img {
 
 .main-container .thumbnail img {
   width: 60px;
-  margin: 0 5px;
+  height: 60px;
+  margin-right: 10px;
   overflow: hidden;
   border-radius: 50%;
 }
