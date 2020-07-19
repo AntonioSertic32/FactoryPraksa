@@ -211,5 +211,7 @@ nav button img {
   margin-right: 10px;
   overflow: hidden;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
