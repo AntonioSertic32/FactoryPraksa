@@ -11,6 +11,10 @@ body {
   background-color: #dae3f2;
 }
 
+a:hover {
+  cursor: pointer;
+}
+
 .naslov {
   font-family: posterama, sans-serif;
 }
@@ -62,6 +66,10 @@ nav button {
       align-content: center;
 }
 
+nav button:hover {
+  cursor: pointer;
+}
+
 nav button img {
   width: 14px;
   margin-left: 14px;
@@ -94,7 +102,6 @@ nav button img {
   width: 39rem;
   height: 7rem;
   border-radius: 100px;
-  z-index: -1;
   background-color: #BBC7D6;
   position: absolute;
   top: 25rem;
@@ -109,7 +116,6 @@ nav button img {
   height: 100px;
   width: 100px;
   margin: 6px;
-  z-index: 1;
 }
 
 .main-container .nav-container .prev {
@@ -145,6 +151,7 @@ nav button img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1;
 }
 
 .main-container .hero-container img {

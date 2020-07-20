@@ -209,17 +209,19 @@ setTimeout(() => {
 }, 2000);
 */
 
-$(".slider-for").slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: true,
-  fade: true,
-  asNavFor: ".slider-nav",
-});
-$(".slider-nav").slick({
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  asNavFor: ".slider-for",
-  centerMode: true,
-  focusOnSelect: true,
-});
+var trenutni_heroj = 0;
+
+function Slajder(vrijednost) {
+  if (vrijednost == "prev") {
+    trenutni_heroj--;
+  } else if (vrijednost == "next") {
+    trenutni_heroj++;
+  } else if (vrijednost == "rand") {
+    trenutni_heroj = Math.floor(Math.random() * 10);
+  } else {
+    trenutni_heroj = vrijednost;
+  }
+
+  $("#slider_icon").attr("src", game.heroes_demo[trenutni_heroj].image);
+  $("#slider_hero_name").html(game.heroes_demo[trenutni_heroj].name);
+}
