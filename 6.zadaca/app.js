@@ -7,79 +7,39 @@ class Hero {
   power = 0;
   combat = 0;
 
-  constructor(name, intelligence, strength, speed, durability, power, combat) {
+  constructor(name, powerstats, image) {
     this.name = name;
-    if (intelligence != "null") {
-      this.intelligence = intelligence;
-    }
-    if (strength != "null") {
-      this.strength = strength;
-    }
-    if (speed != "null") {
-      this.speed = speed;
-    }
-    if (durability != "null") {
-      this.durability = durability;
-    }
-    if (power != "null") {
-      this.power = power;
-    }
-    if (combat != "null") {
-      this.combat = combat;
-    }
-  }
-}
 
-class HeroDemo {
-  name = "";
-  image = "";
-
-  constructor(name, url) {
-    this.name = name;
-    if (url != "null") {
-      this.image = url;
+    if (powerstats.intelligence != "null") {
+      this.intelligence = powerstats.intelligence;
     }
+    if (powerstats.strength != "null") {
+      this.strength = powerstats.strength;
+    }
+    if (powerstats.speed != "null") {
+      this.speed = powerstats.speed;
+    }
+    if (powerstats.durability != "null") {
+      this.durability = powerstats.durability;
+    }
+    if (powerstats.power != "null") {
+      this.power = powerstats.power;
+    }
+    if (powerstats.combat != "null") {
+      this.combat = powerstats.combat;
+    }
+    this.image = image.url;
   }
 }
 
 // Deklariranje klase Game
 class Game {
   heroes = [];
-  heroes_demo = [];
 
   polufinale = [];
   finale = [];
 
   keys = ["intelligence", "strength", "speed", "durability", "power", "combat"];
-
-  CheckInDemo(id) {
-    fetch("https://superheroapi.com/api/1495869663918880/" + id + "/image")
-      .then((res) => res.json())
-      .then((data) => {
-        this.heroes_demo.push(new HeroDemo(data.name, data.url));
-      })
-      .catch((error) => console.log("ERROR"));
-  }
-
-  // Funkcija koja dohvaca heroje sa api-ja
-  CheckIn(id) {
-    fetch("https://superheroapi.com/api/1495869663918880/" + id + "/powerstats")
-      .then((res) => res.json())
-      .then((data) => {
-        this.heroes.push(
-          new Hero(
-            data.name,
-            data.intelligence,
-            data.strength,
-            data.speed,
-            data.durability,
-            data.power,
-            data.combat
-          )
-        );
-      })
-      .catch((error) => console.log("ERROR"));
-  }
 
   // Funkcija koja izvrsava borbe heroja
   Match(first, second) {
@@ -173,24 +133,90 @@ class Game {
   }
 }
 
-// Kreiranje objekta Game i pozivanja njegovih metoda
+// Kreiranje objekta Game
 var game = new Game();
 
-for (var i = 0; i < 10; i++) {
+// Dohvaca 10 jedinstvenih heroja
+var id_array = [];
+var i = 0;
+while (i < 10) {
   var id = Math.floor(Math.random() * 732);
-  game.CheckInDemo(id);
+  if (jQuery.inArray(id, id_array) === -1) {
+    id_array.push(id);
+    CheckIn(id);
+    i++;
+  }
 }
 
+// Funkcija koja dohvaca heroje sa api-ja preko id-a
+function CheckIn(id) {
+  fetch("https://superheroapi.com/api/1495869663918880/" + id)
+    .then((res) => res.json())
+    .then((data) => {
+      game.heroes.push(new Hero(data.name, data.powerstats, data.image));
+    })
+    .catch((error) => console.log("ERROR"));
+}
+
+// Manipulacija slajderom i thumbnail-ima
+$(".prev").prop("disabled", true);
+$(".prev").css({ "background-color": "initial", cursor: "default" });
+
 setTimeout(() => {
-  console.log(game.heroes_demo);
+  console.log(game.heroes);
   var brojac = 0;
   $("#thumbnail > a > .hero_icon").each(function () {
-    $(this).attr("src", game.heroes_demo[brojac].image);
+    $(this).attr("src", game.heroes[brojac].image);
     brojac++;
   });
-  $("#slider_icon").attr("src", game.heroes_demo[0].image);
-  $("#slider_hero_name").html(game.heroes_demo[0].name);
+  $("#slider_icon").attr("src", game.heroes[0].image);
+  $("#slider_hero_name").html(game.heroes[0].name);
 }, 2000);
+
+// Funkcionalnost odabira heroja
+var trenutni_heroj = 0;
+
+function Slajder(vrijednost) {
+  if (vrijednost == "prev") {
+    trenutni_heroj--;
+  } else if (vrijednost == "next") {
+    trenutni_heroj++;
+  } else if (vrijednost == "rand") {
+    trenutni_heroj = Math.floor(Math.random() * 10);
+  } else {
+    trenutni_heroj = vrijednost;
+  }
+
+  if (trenutni_heroj == 0) {
+    $(".prev").prop("disabled", true);
+    $(".prev").css({ "background-color": "initial", cursor: "default" });
+  } else {
+    $(".prev").prop("disabled", false);
+    $(".prev").css({ "background-color": "#003DA7", cursor: "pointer" });
+  }
+
+  if (trenutni_heroj == 9) {
+    $(".next").prop("disabled", true);
+    $(".next").css({ "background-color": "initial", cursor: "default" });
+  } else {
+    $(".next").prop("disabled", false);
+    $(".next").css({ "background-color": "#003DA7", cursor: "pointer" });
+  }
+
+  $("#slider_icon").attr("src", game.heroes[trenutni_heroj].image);
+  $("#slider_hero_name").html(game.heroes[trenutni_heroj].name);
+}
+
+// + Maknuti HeroDemo i podesiti da odmah sve dohvaca
+// + Ne smije biti duplikata
+// + Izvaditi checkIn() iz klase Game
+// - jQuery za manipulaciju na hover nad thumbnailovima i strelicama na slajderu
+// - Ako bude vise od 5 nerješenih random pobjednik
+// - Arhitektura JS-a
+// - Ak ne dohvati sliku..
+// ...
+
+// Odigravanja
 
 /*
 for (var i = 0; i < 8; i++) {
@@ -208,20 +234,3 @@ setTimeout(() => {
   game.Finale();
 }, 2000);
 */
-
-var trenutni_heroj = 0;
-
-function Slajder(vrijednost) {
-  if (vrijednost == "prev") {
-    trenutni_heroj--;
-  } else if (vrijednost == "next") {
-    trenutni_heroj++;
-  } else if (vrijednost == "rand") {
-    trenutni_heroj = Math.floor(Math.random() * 10);
-  } else {
-    trenutni_heroj = vrijednost;
-  }
-
-  $("#slider_icon").attr("src", game.heroes_demo[trenutni_heroj].image);
-  $("#slider_hero_name").html(game.heroes_demo[trenutni_heroj].name);
-}

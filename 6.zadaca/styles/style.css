@@ -11,7 +11,7 @@ body {
   background-color: #dae3f2;
 }
 
-a:hover {
+a:hover, button:hover {
   cursor: pointer;
 }
 
@@ -116,6 +116,7 @@ nav button img {
   height: 100px;
   width: 100px;
   margin: 6px;
+  border: none;
 }
 
 .main-container .nav-container .prev {
@@ -129,8 +130,6 @@ nav button img {
 .main-container .nav-container img {
   width: 20px;
   height: 20px;
-  margin-left: 40px;
-  margin-top: 40px;
   color: white;
 }
 
@@ -212,10 +211,13 @@ nav button img {
   margin-top: 3.8rem;
 }
 
+.main-container .thumbnail a {
+  margin-right: 10px;
+}
+
 .main-container .thumbnail img {
   width: 60px;
   height: 60px;
-  margin-right: 10px;
   overflow: hidden;
   border-radius: 50%;
   -o-object-fit: cover;
