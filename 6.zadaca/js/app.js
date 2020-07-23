@@ -203,16 +203,17 @@ function Slajder(vrijednost) {
     $(".next").css({ "background-color": "#003DA7", cursor: "pointer" });
   }
 
+  $(".inFocus").removeClass("inFocus");
+  var thumbnail = "#thumbnail a:nth-child(" + (trenutni_heroj + 1) + ") img";
+  $(thumbnail).addClass("inFocus");
+
   $("#slider_icon").attr("src", game.heroes[trenutni_heroj].image);
   $("#slider_hero_name").html(game.heroes[trenutni_heroj].name);
 }
 
-// + Maknuti HeroDemo i podesiti da odmah sve dohvaca
-// + Ne smije biti duplikata
-// + Izvaditi checkIn() iz klase Game
-// - jQuery za manipulaciju na hover nad thumbnailovima i strelicama na slajderu
-// - Ako bude vise od 5 nerješenih random pobjednik
+// TO DO:
 // - Arhitektura JS-a
+// - Ako bude vise od 5 nerješenih random pobjednik
 // - Ak ne dohvati sliku..
 // ...
 

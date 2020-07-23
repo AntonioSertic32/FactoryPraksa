@@ -135,10 +135,14 @@ nav
         a
             margin-right: 10px
         img
-            width: 60px
-            height: 60px
+            width: 80px
+            height: 80px
             
             overflow: hidden
             border-radius: 50%
             object-fit: cover
-            //filter: grayscale(100%)
+            filter: grayscale(100%)
+            &:hover
+                filter: grayscale(0%)
+        .inFocus
+            filter: grayscale(0%)

@@ -216,11 +216,23 @@ nav button img {
 }
 
 .main-container .thumbnail img {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   overflow: hidden;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.main-container .thumbnail img:hover {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
+}
+
+.main-container .thumbnail .inFocus {
+  -webkit-filter: grayscale(0%);
+          filter: grayscale(0%);
 }
 /*# sourceMappingURL=style.css.map */
