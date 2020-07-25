@@ -213,7 +213,7 @@ function Slajder(vrijednost) {
 
 function Turnir() {
   $(".main-container").css("display", "none");
-  $(".turnir-container").css("display", "block");
+  $(".turnir-container").css("display", "grid");
   $(".pokreni").css("display", "none");
 }
 

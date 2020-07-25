@@ -238,5 +238,50 @@ nav button img {
 
 .turnir-container {
   display: none;
+  text-align: center;
+  height: 100%;
+  padding-top: 150px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-grid-columns: 200px 300px 300px 300px 200px;
+      grid-template-columns: 200px 300px 300px 300px 200px;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+.turnir-container .box-4 {
+  height: 200px;
+}
+
+.turnir-container .box-2 {
+  height: 400px;
+}
+
+.turnir-container .box-1 {
+  background-color: green;
+}
+
+.turnir-container .filler-4 {
+  width: 200px;
+  height: 200px;
+}
+
+.turnir-container .filler-2 {
+  width: 300px;
+  height: 100px;
+}
+
+.turnir-container .box-4, .turnir-container .box-2, .turnir-container .box-1 {
+  border: 1px solid black;
+}
+
+.turnir-container img {
+  overflow: hidden;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
