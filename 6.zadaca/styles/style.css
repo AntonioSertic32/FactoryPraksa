@@ -235,4 +235,8 @@ nav button img {
   -webkit-filter: grayscale(0%);
           filter: grayscale(0%);
 }
+
+.turnir-container {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

@@ -211,6 +211,12 @@ function Slajder(vrijednost) {
   $("#slider_hero_name").html(game.heroes[trenutni_heroj].name);
 }
 
+function Turnir() {
+  $(".main-container").css("display", "none");
+  $(".turnir-container").css("display", "block");
+  $(".pokreni").css("display", "none");
+}
+
 // TO DO:
 // - Arhitektura JS-a
 // - Ako bude vise od 5 nerješenih random pobjednik
