@@ -171,7 +171,7 @@ setTimeout(() => {
   });
   $("#slider_icon").attr("src", game.heroes[0].image);
   $("#slider_hero_name").html(game.heroes[0].name);
-}, 2000);
+}, 3000);
 
 // Funkcionalnost odabira heroja
 var trenutni_heroj = 0;

@@ -250,16 +250,108 @@ nav button img {
       align-content: space-between;
 }
 
-.turnir-container .box-4 {
+.turnir-container .box-4-container-left .box-4-up {
+  border: 1px solid black;
+  border-left: none;
   height: 200px;
 }
 
-.turnir-container .box-2 {
+.turnir-container .box-4-container-left .box-4-up .hero-icon-up {
+  width: 100px;
+  margin-top: -50px;
+}
+
+.turnir-container .box-4-container-left .box-4-up .hero-icon-down {
+  width: 100px;
+  margin-top: 100px;
+}
+
+.turnir-container .box-4-container-left .box-4-down {
+  border: 1px solid black;
+  border-left: none;
+  height: 200px;
+}
+
+.turnir-container .box-4-container-left .box-4-down .hero-icon-up {
+  width: 100px;
+  margin-top: -50px;
+}
+
+.turnir-container .box-4-container-left .box-4-down .hero-icon-down {
+  width: 100px;
+  margin-top: 100px;
+}
+
+.turnir-container .box-2-container-left .box-2 {
+  border: 1px solid black;
+  border-left: none;
   height: 400px;
 }
 
-.turnir-container .box-1 {
-  background-color: green;
+.turnir-container .box-2-container-left .box-2 .hero-icon-up {
+  width: 100px;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-2-container-left .box-2 .hero-icon-down {
+  width: 100px;
+  margin-top: 300px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-4-container-right .box-4-up {
+  border: 1px solid black;
+  border-right: none;
+  height: 200px;
+}
+
+.turnir-container .box-4-container-right .box-4-up .hero-icon-up {
+  width: 100px;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-4-container-right .box-4-up .hero-icon-down {
+  width: 100px;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-4-container-right .box-4-down {
+  border: 1px solid black;
+  border-right: none;
+  height: 200px;
+}
+
+.turnir-container .box-4-container-right .box-4-down .hero-icon-up {
+  width: 100px;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-4-container-right .box-4-down .hero-icon-down {
+  width: 100px;
+  margin-top: 100px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-2-container-right .box-2 {
+  border: 1px solid black;
+  border-right: none;
+  height: 400px;
+}
+
+.turnir-container .box-2-container-right .box-2 .hero-icon-up {
+  width: 100px;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.turnir-container .box-2-container-right .box-2 .hero-icon-down {
+  width: 100px;
+  margin-top: 300px;
+  margin-left: 100px;
 }
 
 .turnir-container .filler-4 {
@@ -270,10 +362,6 @@ nav button img {
 .turnir-container .filler-2 {
   width: 300px;
   height: 100px;
-}
-
-.turnir-container .box-4, .turnir-container .box-2, .turnir-container .box-1 {
-  border: 1px solid black;
 }
 
 .turnir-container img {
