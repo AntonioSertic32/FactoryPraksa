@@ -5,6 +5,7 @@
   padding: 0;
   margin: 0;
   text-decoration: none;
+  font-family: posterama, sans-serif;
 }
 
 body {
@@ -13,10 +14,6 @@ body {
 
 a:hover, button:hover {
   cursor: pointer;
-}
-
-.naslov {
-  font-family: posterama, sans-serif;
 }
 
 nav {
@@ -244,114 +241,199 @@ nav button img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: 200px 300px 300px 300px 200px;
-      grid-template-columns: 200px 300px 300px 300px 200px;
+  -ms-grid-columns: 200px 300px 500px 300px 200px;
+      grid-template-columns: 200px 300px 500px 300px 200px;
   -ms-flex-line-pack: justify;
       align-content: space-between;
 }
 
 .turnir-container .box-4-container-left .box-4-up {
-  border: 1px solid black;
+  border: 1.7px solid #bbc7d6;
   border-left: none;
   height: 200px;
 }
 
 .turnir-container .box-4-container-left .box-4-up .hero-icon-up {
-  width: 100px;
+  width: 130px;
   margin-top: -50px;
+  background-color: #dae3f2;
+}
+
+.turnir-container .box-4-container-left .box-4-up p {
+  margin-left: 150px;
+  font-weight: 900;
+  font-size: 20px;
+  margin-top: 30px;
+  color: black;
 }
 
 .turnir-container .box-4-container-left .box-4-up .hero-icon-down {
-  width: 100px;
-  margin-top: 100px;
+  width: 130px;
+  margin-top: 45px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-4-container-left .box-4-down {
-  border: 1px solid black;
+  border: 1.7px solid #bbc7d6;
   border-left: none;
   height: 200px;
 }
 
 .turnir-container .box-4-container-left .box-4-down .hero-icon-up {
-  width: 100px;
+  width: 130px;
   margin-top: -50px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-4-container-left .box-4-down .hero-icon-down {
-  width: 100px;
+  width: 130px;
   margin-top: 100px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-2-container-left .box-2 {
-  border: 1px solid black;
+  border: 1.7px solid #bbc7d6;
   border-left: none;
   height: 400px;
 }
 
 .turnir-container .box-2-container-left .box-2 .hero-icon-up {
-  width: 100px;
+  width: 130px;
   margin-top: -50px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-2-container-left .box-2 .hero-icon-down {
-  width: 100px;
+  width: 130px;
   margin-top: 300px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-4-container-right .box-4-up {
-  border: 1px solid black;
+  border: 1.7px solid #bbc7d6;
   border-right: none;
   height: 200px;
 }
 
 .turnir-container .box-4-container-right .box-4-up .hero-icon-up {
-  width: 100px;
+  width: 130px;
   margin-top: -50px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-4-container-right .box-4-up .hero-icon-down {
-  width: 100px;
+  width: 130px;
   margin-top: 100px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-4-container-right .box-4-down {
-  border: 1px solid black;
+  border: 1.7px solid #bbc7d6;
   border-right: none;
   height: 200px;
 }
 
 .turnir-container .box-4-container-right .box-4-down .hero-icon-up {
-  width: 100px;
+  width: 130px;
   margin-top: -50px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-4-container-right .box-4-down .hero-icon-down {
-  width: 100px;
+  width: 130px;
   margin-top: 100px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-2-container-right .box-2 {
-  border: 1px solid black;
+  border: 1.7px solid #bbc7d6;
   border-right: none;
   height: 400px;
 }
 
 .turnir-container .box-2-container-right .box-2 .hero-icon-up {
-  width: 100px;
+  width: 130px;
   margin-top: -50px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .box-2-container-right .box-2 .hero-icon-down {
-  width: 100px;
+  width: 130px;
   margin-top: 300px;
-  margin-left: 100px;
+  margin-left: 85px;
+  background-color: #dae3f2;
+}
+
+.turnir-container .box-1 .box-1-up {
+  height: 200px;
+}
+
+.turnir-container .box-1 .box-1-up .hero-icon-up {
+  height: 100px;
+}
+
+.turnir-container .box-1 .box-1-up .box-1-up-down {
+  padding-top: 20px;
+}
+
+.turnir-container .box-1 .box-1-up .box-1-up-down .box-1-up-left {
+  height: 80px;
+  width: 249.25px;
+  border-right: 1.7px solid #bbc7d6;
+}
+
+.turnir-container .box-1 .box-1-up .box-1-up-down .box-1-up-right {
+  height: 80px;
+  width: 249.25px;
+}
+
+.turnir-container .box-1 .box-1-down {
+  height: 100px;
+}
+
+.turnir-container .box-1 .box-1-left {
+  display: inline-block;
+  border-bottom: 1.7px solid #bbc7d6;
+  float: left;
+  height: 100px;
+  width: 148.3px;
+}
+
+.turnir-container .box-1 .box-1-left .hero-icon-left {
+  margin-top: 50px;
+  margin-left: 85px;
+  width: 130px;
+  background-color: #dae3f2;
+}
+
+.turnir-container .box-1 .box-1-middle {
+  width: 200px;
+  height: 35px;
+  display: inline-block;
+  border: 1.7px solid #bbc7d6;
+  border-bottom: none;
+}
+
+.turnir-container .box-1 .box-1-right {
+  display: inline-block;
+  border-bottom: 1.7px solid #bbc7d6;
+  float: right;
+  height: 100px;
+  width: 148.3px;
+}
+
+.turnir-container .box-1 .box-1-right .hero-icon-right {
+  margin-top: 50px;
+  margin-left: -70px;
+  width: 130px;
+  background-color: #dae3f2;
 }
 
 .turnir-container .filler-4 {
@@ -362,6 +444,11 @@ nav button img {
 .turnir-container .filler-2 {
   width: 300px;
   height: 100px;
+}
+
+.turnir-container .filler-1 {
+  width: 500px;
+  height: 300px;
 }
 
 .turnir-container img {
