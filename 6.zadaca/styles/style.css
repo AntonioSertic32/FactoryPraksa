@@ -247,6 +247,12 @@ nav button img {
       align-content: space-between;
 }
 
+.turnir-container p {
+  font-weight: 900;
+  font-size: 20px;
+  color: black;
+}
+
 .turnir-container .box-4-container-left .box-4-up {
   border: 1.7px solid #bbc7d6;
   border-left: none;
@@ -261,10 +267,7 @@ nav button img {
 
 .turnir-container .box-4-container-left .box-4-up p {
   margin-left: 150px;
-  font-weight: 900;
-  font-size: 20px;
   margin-top: 30px;
-  color: black;
 }
 
 .turnir-container .box-4-container-left .box-4-up .hero-icon-down {
@@ -285,9 +288,14 @@ nav button img {
   background-color: #dae3f2;
 }
 
+.turnir-container .box-4-container-left .box-4-down p {
+  margin-left: 150px;
+  margin-top: 30px;
+}
+
 .turnir-container .box-4-container-left .box-4-down .hero-icon-down {
   width: 130px;
-  margin-top: 100px;
+  margin-top: 45px;
   background-color: #dae3f2;
 }
 
@@ -304,9 +312,14 @@ nav button img {
   background-color: #dae3f2;
 }
 
+.turnir-container .box-2-container-left .box-2 p {
+  margin-left: 250px;
+  margin-top: 130px;
+}
+
 .turnir-container .box-2-container-left .box-2 .hero-icon-down {
   width: 130px;
-  margin-top: 300px;
+  margin-top: 145px;
   margin-left: 85px;
   background-color: #dae3f2;
 }
@@ -324,9 +337,14 @@ nav button img {
   background-color: #dae3f2;
 }
 
+.turnir-container .box-4-container-right .box-4-up p {
+  margin-right: 150px;
+  margin-top: 30px;
+}
+
 .turnir-container .box-4-container-right .box-4-up .hero-icon-down {
   width: 130px;
-  margin-top: 100px;
+  margin-top: 45px;
   margin-left: 85px;
   background-color: #dae3f2;
 }
@@ -344,9 +362,14 @@ nav button img {
   background-color: #dae3f2;
 }
 
+.turnir-container .box-4-container-right .box-4-down p {
+  margin-right: 150px;
+  margin-top: 30px;
+}
+
 .turnir-container .box-4-container-right .box-4-down .hero-icon-down {
   width: 130px;
-  margin-top: 100px;
+  margin-top: 45px;
   margin-left: 85px;
   background-color: #dae3f2;
 }
@@ -364,9 +387,14 @@ nav button img {
   background-color: #dae3f2;
 }
 
+.turnir-container .box-2-container-right .box-2 p {
+  margin-right: 250px;
+  margin-top: 130px;
+}
+
 .turnir-container .box-2-container-right .box-2 .hero-icon-down {
   width: 130px;
-  margin-top: 300px;
+  margin-top: 145px;
   margin-left: 85px;
   background-color: #dae3f2;
 }
@@ -419,6 +447,10 @@ nav button img {
   display: inline-block;
   border: 1.7px solid #bbc7d6;
   border-bottom: none;
+}
+
+.turnir-container .box-1 .box-1-middle p {
+  margin-top: 5px;
 }
 
 .turnir-container .box-1 .box-1-right {

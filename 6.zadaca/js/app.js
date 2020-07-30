@@ -215,8 +215,32 @@ function Turnir() {
   $(".main-container").css("display", "none");
   $(".turnir-container").css("display", "grid");
   $(".pokreni").css("display", "none");
+
+  Random_Hero();
+  setTimeout(() => {
+    var brojac = 0;
+    $(".cetvrtfinale").each(function () {
+      $(this).attr("src", game.heroes[brojac].image);
+      brojac++;
+    });
+  }, 100);
+  setTimeout(() => {
+    console.log(game.heroes);
+    console.log("");
+    game.Quarterfinal();
+  }, 200);
 }
 
+function Random_Hero() {
+  var trueFalse = 0;
+  while (trueFalse < 2) {
+    var random_heroj = Math.floor(Math.random() * game.heroes.length);
+    if (random_heroj != trenutni_heroj) {
+      game.heroes.splice(random_heroj, 1);
+      trueFalse++;
+    }
+  }
+}
 // TO DO:
 // - Arhitektura JS-a
 // - Ako bude vise od 5 nerješenih random pobjednik
