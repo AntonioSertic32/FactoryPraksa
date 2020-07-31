@@ -38,6 +38,7 @@ class Game {
 
   polufinale = [];
   finale = [];
+  winner = [];
 
   keys = ["intelligence", "strength", "speed", "durability", "power", "combat"];
 
@@ -112,6 +113,8 @@ class Game {
   Quarterfinal() {
     console.log("********** Četvrtfinale **********");
     for (var i = 0; i < 8; i += 2) {
+      // Ovdje bi se trebala pozivati Match funkcija u kojou bi se slala dva heroja i odigrala jedna borba i pozivala bi se dok jedan ne bi dosao do 2..
+      // Te bi se nakon svakog Matcha mogli azurirati rezilatti u tablici
       this.polufinale.push(this.Match(this.heroes[i], this.heroes[i + 1]));
     }
   }
@@ -128,7 +131,7 @@ class Game {
   Finale() {
     console.log("********** Finale **********");
     for (var i = 0; i < 2; i += 2) {
-      this.Match(this.finale[i], this.finale[i + 1]);
+      this.winner.push(this.Match(this.finale[i], this.finale[i + 1]));
     }
   }
 }
@@ -211,12 +214,15 @@ function Slajder(vrijednost) {
   $("#slider_hero_name").html(game.heroes[trenutni_heroj].name);
 }
 
+// Pocetak turnira
+
 function Turnir() {
   $(".main-container").css("display", "none");
   $(".turnir-container").css("display", "grid");
   $(".pokreni").css("display", "none");
 
   Random_Hero();
+
   setTimeout(() => {
     var brojac = 0;
     $(".cetvrtfinale").each(function () {
@@ -224,10 +230,31 @@ function Turnir() {
       brojac++;
     });
   }, 100);
+
   setTimeout(() => {
     console.log(game.heroes);
     console.log("");
     game.Quarterfinal();
+
+    var brojac = 0;
+    $(".polufinale").each(function () {
+      $(this).attr("src", game.polufinale[brojac].image);
+      brojac++;
+    });
+
+    console.log("");
+    game.Semifinal();
+
+    brojac = 0;
+    $(".finale").each(function () {
+      $(this).attr("src", game.finale[brojac].image);
+      brojac++;
+    });
+
+    console.log("");
+    game.Finale();
+
+    $(".pobjednik").attr("src", game.winner[0].image);
   }, 200);
 }
 

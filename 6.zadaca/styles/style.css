@@ -403,6 +403,14 @@ nav button img {
   height: 200px;
 }
 
+.turnir-container .box-1 .box-1-up .winner-p {
+  margin-top: -40px;
+  width: 500px;
+  text-align: center;
+  font-size: 23px;
+  position: absolute;
+}
+
 .turnir-container .box-1 .box-1-up .hero-icon-up {
   height: 100px;
 }
