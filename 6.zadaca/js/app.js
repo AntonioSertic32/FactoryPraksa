@@ -212,6 +212,17 @@ function Slajder(vrijednost) {
 
   $("#slider_icon").attr("src", game.heroes[trenutni_heroj].image);
   $("#slider_hero_name").html(game.heroes[trenutni_heroj].name);
+
+  /*
+  $("#s_i").attr("src", game.heroes[trenutni_heroj].image);
+  $("#slider_icon").animate({ height: 0 }, 500);
+  $("#s_i").animate({ height: 320 }, 500);
+  */
+  // znaci svaka od slika u slajderu ce imati istu klasu te ce prva odmah imati visinu kako bi mogao dat svima slike kroz loop
+  // i imat ce svaka vlastitu klasu tipa .heroj-1 jer ce se ovdje iznad kreirat string ".heroj-" + trenutni_heroj + 1..
+  // kako bi se bas tom heroju promjenila visina a trenutnom manjila
+
+  // sredit sutra tu animaciju u slajderu i optimizirat sass varijablama
 }
 
 // Pocetak turnira
