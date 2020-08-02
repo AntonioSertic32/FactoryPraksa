@@ -172,7 +172,11 @@ setTimeout(() => {
     $(this).attr("src", game.heroes[brojac].image);
     brojac++;
   });
-  $("#slider_icon").attr("src", game.heroes[0].image);
+  brojac = 0;
+  $(".slider_icon").each(function () {
+    $(this).attr("src", game.heroes[brojac].image);
+    brojac++;
+  });
   $("#slider_hero_name").html(game.heroes[0].name);
 }, 3000);
 
@@ -180,12 +184,18 @@ setTimeout(() => {
 var trenutni_heroj = 0;
 
 function Slajder(vrijednost) {
+  trenutni_heroj++;
+  var trenutni_heroj_class = ".hero-" + trenutni_heroj;
+  $(trenutni_heroj_class).animate({ height: 0 }, 400);
+  trenutni_heroj--;
+
   if (vrijednost == "prev") {
     trenutni_heroj--;
   } else if (vrijednost == "next") {
     trenutni_heroj++;
   } else if (vrijednost == "rand") {
     trenutni_heroj = Math.floor(Math.random() * 10);
+    // napravit da ne moze bit trenutni heroj
   } else {
     trenutni_heroj = vrijednost;
   }
@@ -210,19 +220,9 @@ function Slajder(vrijednost) {
   var thumbnail = "#thumbnail a:nth-child(" + (trenutni_heroj + 1) + ") img";
   $(thumbnail).addClass("inFocus");
 
-  $("#slider_icon").attr("src", game.heroes[trenutni_heroj].image);
-  $("#slider_hero_name").html(game.heroes[trenutni_heroj].name);
-
-  /*
-  $("#s_i").attr("src", game.heroes[trenutni_heroj].image);
-  $("#slider_icon").animate({ height: 0 }, 500);
-  $("#s_i").animate({ height: 320 }, 500);
-  */
-  // znaci svaka od slika u slajderu ce imati istu klasu te ce prva odmah imati visinu kako bi mogao dat svima slike kroz loop
-  // i imat ce svaka vlastitu klasu tipa .heroj-1 jer ce se ovdje iznad kreirat string ".heroj-" + trenutni_heroj + 1..
-  // kako bi se bas tom heroju promjenila visina a trenutnom manjila
-
-  // sredit sutra tu animaciju u slajderu i optimizirat sass varijablama
+  var sljedeci_heroj_class = ".hero-" + ++trenutni_heroj;
+  $(sljedeci_heroj_class).animate({ height: 320 }, 400);
+  $("#slider_hero_name").html(game.heroes[--trenutni_heroj].name);
 }
 
 // Pocetak turnira
@@ -284,6 +284,8 @@ function Random_Hero() {
 // - Ako bude vise od 5 nerješenih random pobjednik
 // - Ak ne dohvati sliku..
 // ...
+// - Optimizirat sass
+// - Probat animirat slike u slajderu da idu lijvo desno
 
 // Odigravanja
 
